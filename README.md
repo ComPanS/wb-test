@@ -29,4 +29,10 @@ docker compose up --build
 2) Дайте сервис-аккаунту доступ к таблицам.  
 3) Лист `stocks_coefs` создаётся автоматически, если его нет.
 
+## Как здесь используется Knex
+- Настройки и пути миграций/сидов в `src/config/knex/knexfile.ts` (берёт параметры из `.env`).
+- При старте `src/app.ts` выполняет `migrate.latest()` и `seed.run()` — база готовится автоматом.
+- CLI для ручного управления: `npm run knex:dev migrate latest|rollback|up|down|list` и `npm run knex:dev seed run`.
+- В коде: `src/services/wb/repository.ts` делает транзакционный upsert дневных тарифов и выборку последнего среза.
+
 
