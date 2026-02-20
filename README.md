@@ -1,5 +1,7 @@
 # WB Tariffs Sync
 
+В задаче было указано что приложение должно запускаться одной командой и без манипуляций, так что я допустил .env и credentials в репозиторий. При обычный условиях, такое не пропускается
+
 После запуска проверить https://docs.google.com/spreadsheets/d/1m-laW3TB3372mv6vY3Z4aBHxWx4Qz7ZiawwCX_OpDtY/edit?gid=1257736581#gid=1257736581
 
 Приложение по заданию из `task.md`:
@@ -22,7 +24,7 @@ docker compose up --build
 - `GOOGLE_SPREADSHEET_IDS` — список ID/URL таблиц через запятую; по умолчанию берётся сид `1m-laW3TB3372mv6vY3Z4aBHxWx4Qz7ZiawwCX_OpDtY`.
 - `GOOGLE_SHEET_NAME` — имя листа (по умолчанию `stocks_coefs`).
 
-## Подготовка Google
+## Подготовка Google (уже сделано)
 1) Создайте `credentials.json` по шаблону `credentials.example.json` или используйте выданный файл.  
 2) Дайте сервис-аккаунту доступ к таблицам.  
 3) Лист `stocks_coefs` создаётся автоматически, если его нет.
